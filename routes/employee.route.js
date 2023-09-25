@@ -8,7 +8,7 @@ employeeRouter.post("/add",async(req,res)=>{
     try {
         let employee=new EmployeeModel(req.body)
         await employee.save()
-        return res.status(200).json("New employee added",employee)
+        return res.status(200).json({msg:"New employee added",employee})
     } catch (error) {
         res.status(500).json(error)
     }
